@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les erreurs les plus fréquentes des PME suisses | FynUp Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1520; --bg-alt:#0d1a28; --card:#0f1e2c;
+  --accent:#22c3ea; --accent-dim:#00A6D6;
+  --text:#e8eef2; --muted:#8aa0b0; --faint:#4a6070;
+  --border:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:'Inter',-apple-system,sans-serif;
+  background-image:radial-gradient(circle, rgba(34,195,234,.16) 1px, transparent 1px);
+  background-size:24px 24px;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px; width:100%;}
+img,svg{max-width:100%;}
+
+/* --- top nav --- */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(10,21,32,.85); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
+.brand{font-family:'DM Mono',monospace; font-size:14px; font-weight:500; letter-spacing:-.3px;}
+.brand .plus{color:var(--accent);}
+.topbar a.cta-mini{
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.5px;
+  color:var(--accent); border:1px solid rgba(34,195,234,.5);
+  padding:8px 14px; border-radius:20px; text-decoration:none;
+  text-transform:uppercase; white-space:nowrap;
+}
+
+/* --- hero --- */
+.hero{padding:64px 0 40px 0; position:relative;}
+.eyebrow{
+  display:inline-block; font-family:'DM Mono',monospace; font-size:11px;
+  letter-spacing:2px; text-transform:uppercase; color:var(--accent);
+  border:1px solid rgba(34,195,234,.5); background:rgba(34,195,234,.08);
+  padding:6px 14px; border-radius:20px; margin-bottom:28px;
+}
+h1{
+  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  font-size:clamp(32px,6vw,52px); line-height:1.12; letter-spacing:-1px;
+  margin:0 0 20px 0;
+}
+h1 .accent{color:var(--accent);}
+.lede{font-size:17px; line-height:1.7; color:var(--muted); max-width:560px; margin:0 0 32px 0;}
+.stat-row{display:flex; gap:36px; flex-wrap:wrap; margin-bottom:8px;}
+.stat{display:block; margin-right:36px;}
+.stat:last-child{margin-right:0;}
+.stat .num{font-family:'DM Mono',monospace; font-size:26px; color:var(--accent); font-weight:500; display:block; margin-bottom:2px;}
+.stat .lbl{font-family:'DM Mono',monospace; font-size:10px; color:var(--faint); text-transform:uppercase; letter-spacing:1px; display:block; white-space:nowrap;}
+
+/* --- sections --- */
+.section{padding:36px 0 4px 0;}
+.section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+.section-head .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px rgba(34,195,234,.9);}
+.section-head .label{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--accent);}
+
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:12px;
+  padding:20px 22px; margin-bottom:12px;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.card:hover{border-color:rgba(34,195,234,.4); transform:translateX(2px);}
+.card .row{display:flex; gap:16px; align-items:flex-start;}
+.card .idx{
+  font-family:'DM Mono',monospace; font-size:12px; color:var(--accent);
+  background:rgba(34,195,234,.1); border:1px solid rgba(34,195,234,.4);
+  min-width:30px; height:30px; border-radius:8px; text-align:center; line-height:28px;
+  flex-shrink:0;
+}
+.card .title{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; margin-bottom:6px;}
+.card .desc{font-size:14px; line-height:1.6; color:var(--muted);}
+
+/* --- checklist variant --- */
+.check{
+  display:flex; align-items:center; gap:14px;
+  background:var(--card); border:1px solid var(--border); border-radius:10px;
+  padding:15px 18px; margin-bottom:9px; font-size:14.5px;
+}
+.check .box{width:18px; height:18px; min-width:18px; border:2px solid var(--accent); border-radius:5px;}
+
+/* --- CTA band --- */
+.cta-band{
+  margin:56px 0 60px 0; padding:32px 28px; border-radius:16px;
+  background:linear-gradient(135deg, rgba(34,195,234,.16), rgba(34,195,234,.02));
+  border:1px solid rgba(34,195,234,.4); text-align:left;
+}
+.cta-band h3{font-family:'Space Grotesk',sans-serif; font-size:22px; margin:0 0 10px 0; line-height:1.3;}
+.cta-band p{color:var(--muted); font-size:14px; margin:0 0 20px 0;}
+.cta-band .btn{
+  display:inline-block; background:var(--accent); color:#04121c; font-weight:700;
+  font-family:'Space Grotesk',sans-serif; text-decoration:none;
+  padding:13px 26px; border-radius:8px; font-size:14.5px;
+}
+.cta-band .sub{margin-top:14px; font-family:'DM Mono',monospace; font-size:11px; color:var(--faint);}
+
+footer{border-top:1px solid var(--border); padding:28px 0 60px 0; font-family:'DM Mono',monospace; font-size:11px; color:var(--faint);}
+
+/* --- progress dial (signature element) --- */
+.dial{
+  position:fixed; bottom:24px; right:24px; z-index:60;
+  width:56px; height:56px;
+}
+.dial svg{transform:rotate(-90deg);}
+.dial circle{fill:none; stroke-width:4;}
+.dial .bg{stroke:rgba(255,255,255,.1);}
+.dial .fg{stroke:var(--accent); stroke-linecap:round; transition:stroke-dashoffset .1s linear;}
+.dial .pct{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-family:'DM Mono',monospace; font-size:11px; color:var(--accent);
+}
+
+@media (max-width:600px){
+  .topbar .wrap{padding:12px 18px;}
+  .brand{font-size:12.5px;}
+  .cta-mini{padding:7px 11px !important; font-size:10px !important;}
+  .wrap{padding:0 18px;}
+  .hero{padding:36px 0 24px 0;}
+  .eyebrow{font-size:10px; padding:5px 12px; margin-bottom:20px;}
+  h1{font-size:28px; letter-spacing:-.5px;}
+  .lede{font-size:15px;}
+  .stat-row{gap:20px; row-gap:14px;}
+  .stat .num{font-size:21px;}
+  .section{padding:26px 0 2px 0;}
+  .card{padding:16px 16px;}
+  .card .row{gap:12px;}
+  .card .idx{min-width:26px; height:26px; line-height:24px; font-size:11px;}
+  .card .title{font-size:14.5px;}
+  .card .desc{font-size:13px;}
+  .check{padding:13px 14px; font-size:13.5px;}
+  .cta-band{padding:22px 18px; margin:40px 0 40px 0;}
+  .cta-band h3{font-size:18px;}
+  .dial{width:46px; height:46px; bottom:16px; right:16px;}
+  .dial svg{width:46px; height:46px;}
+}
+@media (max-width:360px){
+  h1{font-size:24px;}
+  .stat-row{gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="brand">FynUp<span class="plus">+</span> Consulting</div>
+  <a class="cta-mini" href="https://wa.me/41765062871" target="_blank">Contact</a>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Guide gratuit</div>
+    <h1>Les erreurs<br>les <span class="accent">plus fréquentes</span><br>des PME suisses</h1>
+    <p class="lede">13 erreurs qui reviennent le plus souvent sur le terrain, classées par thème, avec pourquoi elles coûtent cher. Pas de leçon de morale, juste des faits.</p>
+    <div class="stat-row"><div class="stat"><span class="num">13</span><span class="lbl">Erreurs</span></div><div class="stat"><span class="num">05</span><span class="lbl">Thèmes</span></div><div class="stat"><span class="num">CH</span><span class="lbl">Contexte suisse</span></div></div>
+  </div>
+
+  <div class="section">
+  <div class="section-head"><span class="dot"></span><span class="label">01 · Trésorerie</span></div>
+  <div class="card"><div class="row">
+    <span class="idx">01</span>
+    <div><div class="title">Confondre chiffre d&#x27;affaires et argent disponible</div><div class="desc">Un CA en hausse ne veut pas dire plus de cash en banque. Les délais de paiement clients peuvent t'étrangler même en pleine croissance.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">02</span>
+    <div><div class="title">Ne pas anticiper les charges saisonnières</div><div class="desc">TVA, 13e salaire, assurances annuelles. Si elles ne sont pas provisionnées, elles tombent d'un coup et déséquilibrent tout.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">03</span>
+    <div><div class="title">Piloter sans prévisionnel à 3 mois</div><div class="desc">Beaucoup de patrons découvrent un trou de trésorerie une semaine avant qu'il arrive, au lieu de trois mois avant.</div></div>
+  </div></div>
+</div><div class="section">
+  <div class="section-head"><span class="dot"></span><span class="label">02 · Prix &amp; marges</span></div>
+  <div class="card"><div class="row">
+    <span class="idx">04</span>
+    <div><div class="title">Fixer ses prix sans calculer le prix de revient réel</div><div class="desc">Beaucoup de PME suisses vendent en dessous du seuil de rentabilité sans le savoir, faute d'avoir intégré tous les coûts cachés.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">05</span>
+    <div><div class="title">Ne jamais revoir les prix depuis le lancement</div><div class="desc">Les coûts augmentent chaque année. Si les prix ne suivent pas, la marge s'érode silencieusement.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">06</span>
+    <div><div class="title">Regarder le CA plutôt que la marge par produit</div><div class="desc">Le produit qui se vend le plus n'est pas toujours celui qui rapporte le plus.</div></div>
+  </div></div>
+</div><div class="section">
+  <div class="section-head"><span class="dot"></span><span class="label">03 · Administratif</span></div>
+  <div class="card"><div class="row">
+    <span class="idx">07</span>
+    <div><div class="title">Reporter la comptabilité en fin de mois ou de trimestre</div><div class="desc">Plus l'écart entre l'action et la saisie est grand, plus les erreurs et oublis s'accumulent, et plus c'est long à rattraper.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">08</span>
+    <div><div class="title">Mélanger comptes personnels et professionnels</div><div class="desc">Ça complique la comptabilité, fausse la vision de la rentabilité réelle, et peut poser problème en cas de contrôle.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">09</span>
+    <div><div class="title">Ne pas provisionner la TVA au fur et à mesure</div><div class="desc">L'argent de la TVA collectée n'est pas ton argent. Le dépenser comme tel crée un trou à l'échéance.</div></div>
+  </div></div>
+</div><div class="section">
+  <div class="section-head"><span class="dot"></span><span class="label">04 · Organisation &amp; temps</span></div>
+  <div class="card"><div class="row">
+    <span class="idx">10</span>
+    <div><div class="title">Tout faire soi-même par souci d&#x27;économie</div><div class="desc">Le temps passé sur des tâches à faible valeur (saisie, relances) coûte souvent plus cher que de les automatiser ou déléguer.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">11</span>
+    <div><div class="title">Ne pas mesurer où part vraiment le temps</div><div class="desc">Sans suivi, impossible de savoir si le temps investi va vers ce qui fait réellement avancer l'activité.</div></div>
+  </div></div>
+</div><div class="section">
+  <div class="section-head"><span class="dot"></span><span class="label">05 · Croissance</span></div>
+  <div class="card"><div class="row">
+    <span class="idx">12</span>
+    <div><div class="title">Confondre activité et croissance</div><div class="desc">Être occupé n'est pas la même chose que progresser. Beaucoup de patrons travaillent plus sans que la rentabilité suive.</div></div>
+  </div></div><div class="card"><div class="row">
+    <span class="idx">13</span>
+    <div><div class="title">Grandir sans structure derrière</div><div class="desc">Prendre plus de clients ou de volume sans adapter les outils de pilotage mène droit au chaos opérationnel.</div></div>
+  </div></div>
+</div>
+
+  <div class="cta-band">
+    <h3>Tu veux savoir <span style="color:var(--accent)">lesquelles te concernent</span> ?</h3>
+    <p>Audit gratuit de 30 minutes, sans engagement. On regarde ta situation ensemble.</p>
+    <a class="btn" href="https://wa.me/41765062871" target="_blank">Écrire sur WhatsApp</a>
+    <div class="sub">contact@fynup-consulting.ch · fynup-consulting.ch</div>
+  </div>
+
+  <footer>FynUp Consulting · Suisse romande · Erreurs fréquentes PME</footer>
+</div>
+
+<div class="dial">
+  <svg width="56" height="56" viewBox="0 0 56 56">
+    <circle class="bg" cx="28" cy="28" r="24"></circle>
+    <circle class="fg" cx="28" cy="28" r="24"></circle>
+  </svg>
+  <div class="pct">0%</div>
+</div>
+
+<script>
+(function(){
+  var dial = document.querySelector('.dial .fg');
+  var pct = document.querySelector('.dial .pct');
+  var r = 24, c = 2*Math.PI*r;
+  if(dial){ dial.style.strokeDasharray = c; }
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+    scrolled = Math.max(0, Math.min(1, scrolled));
+    if(dial){ dial.style.strokeDashoffset = c * (1 - scrolled); }
+    if(pct){ pct.textContent = Math.round(scrolled*100) + '%'; }
+  });
+})();
+</script>
+</body>
+</html>
